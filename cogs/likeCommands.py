@@ -131,7 +131,7 @@ class LikeCommands(commands.Cog):
                     )
 
                     if data.get("status") == 1:
-    response = data.get("response", {})
+                        response = data.get("response", {})
 
     nickname = response.get("PlayerNickname", "Unknown")
     level = response.get("PlayerLevel", "N/A")
