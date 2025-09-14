@@ -130,7 +130,7 @@ class LikeCommands(commands.Cog):
                         timestamp=datetime.now()
                     )
 
-                    if data.get("status") == 1:
+                         if data.get("status") == 1:
                     response = data.get("response", {})
                          except Exception as e:
                            print(f"Error getting response: {e}")
