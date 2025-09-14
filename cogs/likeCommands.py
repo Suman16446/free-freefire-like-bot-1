@@ -131,16 +131,23 @@ class LikeCommands(commands.Cog):
                     )
 
                     if data.get("status") == 1:
-                        embed.description = (
-                            f"\n"
-                            f"┌  ACCOUNT\n"
-                            f"├─ NICKNAME: {data.get('player', 'Unknown')}\n"
-                            f"├─ UID: {uid}\n"
-                            f"└─ RESULT:\n"
-                            f"   ├─ ADDED: +{data.get('likes_added', 0)}\n"
-                            f"   ├─ BEFORE: {data.get('likes_before', 'N/A')}\n"
-                            f"   └─ AFTER: {data.get('likes_after', 'N/A')}\n"
-                        )
+      embed.description = (
+        f"**SUMAN LIKE BOT**\n"
+        f"Player Nickname: {nickname}\n"
+        f"Player Level: {level}\n"
+        f"Player UID: {uid}\n"
+        f"Region: {server}\n\n"
+        
+        f"**RESULT STATS**\n"
+        f"Added: +{added}\n"
+        f"Before: {before}\n"
+        f"After: {after}\n\n"
+        
+        f" **KEY INFO**\n"
+        f"Remaining Request: `{remaining_requests}`\n\n"
+        
+        f"**Join**\nhttps://discord.gg/FckXZZgdM6\n\n"
+    )
                     else:
                         embed.description = "\n┌MAX LIKES\n└─This UID has already received the maximum likes today.\n"
 
