@@ -131,21 +131,32 @@ class LikeCommands(commands.Cog):
                     )
 
                     if data.get("status") == 1:
-      embed.description = (
+    response = data.get("response", {})
+
+    nickname = response.get("PlayerNickname", "Unknown")
+    level = response.get("PlayerLevel", "N/A")
+    uid = response.get("UID", "N/A")
+    server = server if 'server' in locals() else "Unknown"  # fallback if not defined
+    added = response.get("LikesGivenByAPI", 0)
+    before = response.get("LikesbeforeCommand", "N/A")
+    after = response.get("LikesafterCommand", "N/A")
+    remaining_requests = response.get("KeyRemainingRequests", "Unknown")
+
+    embed.description = (
         f"**SUMAN LIKE BOT**\n"
         f"Player Nickname: {nickname}\n"
         f"Player Level: {level}\n"
         f"Player UID: {uid}\n"
         f"Region: {server}\n\n"
-        
+
         f"**RESULT STATS**\n"
         f"Added: +{added}\n"
         f"Before: {before}\n"
         f"After: {after}\n\n"
-        
+
         f" **KEY INFO**\n"
         f"Remaining Request: `{remaining_requests}`\n\n"
-        
+
         f"**Join**\nhttps://discord.gg/FckXZZgdM6\n\n"
     )
                     else:
