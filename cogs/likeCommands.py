@@ -130,11 +130,14 @@ class LikeCommands(commands.Cog):
                         timestamp=datetime.now()
                     )
 
-                    if data.get("status") == 1:
-                         response = data.get("response", {})
-                                  except Exception as e:
-                           print(f"Error getting response: {e}")
-                           response = {}
+                 if data.get("status") == 1:
+    try:
+        response = data.get("response", {})
+    except Exception as e:
+        print(f"Error getting response: {e}")
+        response = {}
+else:
+    response = {}
 
     nickname = response.get("PlayerNickname", "Unknown")
     level = response.get("PlayerLevel", "N/A")
