@@ -132,7 +132,7 @@ class LikeCommands(commands.Cog):
 
                     if data.get("status") == 1:
                          response = data.get("response", {})
-                         except Exception as e:
+                          except Exception as e:
                            print(f"Error getting response: {e}")
                            response = {}
 
